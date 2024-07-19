@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: D-DIN-Bold, Arial, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+#hero {
+    position: relative;
+    height: 100vh;
+    background-image: url("https://images.unsplash.com/photo-1457364887197-9150188c107b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cm9ja2V0JTIwbGF1bmNofGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60");
+    background-size: cover;
+    background-position: top;
+}
+
+#hero #nav {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding-block: 30px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+#nav a img {
+    height: 24px;
+}
+
+#nav #navpart2 ul {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    margin-right: 70px;
+}
+
+#navpart2 ul li a {
+    color: whitesmoke;
+    font-size: 14px;
+    font-weight: 700;
+    position: relative;
+}
+
+#navpart2 ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: whitesmoke;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.25s ease-in-out;
+}
+
+#navpart2 ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+#navpart3 {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#navpart3 a {
+
+    color: whitesmoke;
+    font-size: 14px;
+    font-weight: 700;
+    position: relative;
+}
+
+#navpart3 a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: whitesmoke;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.25s ease-in-out;
+}
+
+#navpart3 a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+#navpart3 .bars {
+    cursor: pointer;
+    width: 20px;
+    height: 30px;
+}
+
+.bars div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-top: 0;
+}
+
+.bars span {
+    background-color: whitesmoke;
+    width: 100%;
+    height: 2px;
+    border-radius: 0;
+    display: block;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.bars .line1 {
+    transform: translate(-50%, -5px);
+}
+
+.bars .line3 {
+    transform: translate(-50%, 3px);
+}
+
+.open .line1 {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.open .line2 {
+    width: 0;
+    height: 0;
+}
+
+.open .line3 {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.left {
+    color: whitesmoke;
+    position: absolute;
+    top: 60%;
+    left: 80px;
+}
+
+.left>h1 {
+    font-weight: 700;
+    margin-top: 10px;
+    font-size: 2.7rem;
+}
+
+.left>button {
+    position: relative;
+    margin-top: 20px;
+    border-radius: 0;
+    border: 2px solid whitesmoke;
+    outline: none;
+    background: transparent;
+    padding: 20px 50px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.left>button::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+    transform: scaleY(0);
+    left: 0;
+    top: 0;
+    transform-origin: top;
+    transition: transform 0.3s ease-in-out;
+    z-index: -1;
+}
+
+.left>button:hover::after {
+    transform: scaleY(1);
+    transform-origin: bottom;
+}
+
+.left>button>a {
+    color: whitesmoke;
+    font-size: 13px;
+    font-weight: 700;
+    transition: color 0.3s ease-in-out;
+}
+#sidenav {
+    width: 0;
+    height: 100vh;
+    background-color: #111;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+#sidenav.active {
+    width: 260px;
+}
+
+
+#page2 {
+    position: relative;
+    height: 100vh;
+    background-image: url("https://media.wired.com/photos/5a0b8999653cd631c096f712/16:9/w_2048,h_1152,c_limit/spacex-FA.jpg");
+    background-size: cover;
+    background-position: top;
+}
+
+.left>button.active a {
+    color: black;
+}
+
+#page3 {
+    position: relative;
+    height: 100vh;
+    background-image: url("https://i0.wp.com/spacenews.com/wp-content/uploads/2023/01/transporter6.jpg?fit=879%2C485&ssl=1");
+    background-size: cover;
+    background-position: top;
+}
+
+
+
+@media (max-width:960px) {
+    #nav>ul {
+        display: none;
+    }
+
+    #hero>#sidenav>a {
+        display: none;
+    }
+
+    #hero>#nav {
+        top: 10px;
+        left: 50%;
+    }
+}
